@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
 :root {
   --bg-primary: #0b0f19;
   --bg-secondary: #111827;
@@ -21,7 +23,7 @@
 }
 
 body {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Fira Code', 'Inter', monospace;
   background: var(--bg-primary);
   color: var(--text-primary);
   min-height: 100vh;
@@ -50,6 +52,7 @@ header {
   font-size: 1.5rem;
   font-weight: 700;
   background: linear-gradient(135deg, #a5b4fc, #6366f1);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

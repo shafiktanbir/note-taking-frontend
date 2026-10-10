@@ -154,7 +154,7 @@ export function App() {
   return (
     <div className="container">
       <header>
-        <div className="brand">🚀 Secure Notes & Aggregations</div>
+        <div className="brand">Secure Notes</div>
         {user ? (
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
             <span>
@@ -321,9 +321,9 @@ export function App() {
       {activeTab === 'admin' && (
         <div>
           <div className="card">
-            <h3>Admin User Management (Paginated Index Scan)</h3>
+            <h3>Admin User Management</h3>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem' }}>
-              Lists system users sorted by registration date using explicit index <code>{`{ createdAt: -1 }`}</code>.
+              System user directory and role management.
             </p>
             {users.map((u) => (
               <div key={u._id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.75rem 0', borderBottom: '1px solid var(--card-border)' }}>
@@ -372,13 +372,13 @@ export function App() {
         <div>
           {/* Scenario 1 */}
           <div className="card">
-            <h3>Scenario 1: Group Users by Interests</h3>
+            <h3>User Interest Communities</h3>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem' }}>
-              Single <code>collection.aggregate()</code> pipeline deconstructing interest arrays and grouping user documents. Uses <code>{`{ interests: 1 }`}</code> index.
+              User profiles grouped dynamically by shared interest topics.
             </p>
 
             <button className="btn btn-secondary" onClick={fetchGroupedInterests} style={{ marginBottom: '1rem' }}>
-              Refresh Interest Aggregations
+              Refresh Interests
             </button>
 
             <div className="grid-2">
@@ -398,9 +398,9 @@ export function App() {
 
           {/* Scenario 2 */}
           <div className="card">
-            <h3>Scenario 2: User Posts ($lookup Stage)</h3>
+            <h3>User Posts Feed</h3>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem' }}>
-              Single aggregation pipeline joining <code>Users</code> with a separate <code>Posts</code> collection using <code>$lookup</code> indexed on <code>Post.userId</code>.
+              Joined post history for users across the platform.
             </p>
 
             <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem' }}>
@@ -411,7 +411,7 @@ export function App() {
                 onChange={(e) => setTargetUserId(e.target.value)}
               />
               <button className="btn btn-primary" onClick={fetchUserPosts}>
-                Run $lookup Aggregation
+                Filter User Posts
               </button>
             </div>
 
